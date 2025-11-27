@@ -12,11 +12,6 @@ public:
     virtual V remove(std::string key);/*Elimina el par key->value si se encuentra en el diccionario. 
     Si no se encuentra, lanza una std::runtime_error*/
     virtual int entries();//Devuelve el número de elementos que tiene el Diccionario.
-
-
-
-
-
 };
 #endif
 
