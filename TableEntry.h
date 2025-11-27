@@ -9,8 +9,8 @@ class TableEntry {
     public:
         std::string key; //key
         V value; // value
-        TableEntry(std::string &key, V value):key(key),value(value){}//construtor key->value
-        TableEntry(std::string &key):key(key){}//constructor only key
+        TableEntry(const std::string &key, V value):key(key),value(value){}//construtor key->value
+        TableEntry(const std::string &key):key(key){}//constructor only key
         TableEntry(){
             this->key="";
         } 
