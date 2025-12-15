@@ -5,13 +5,11 @@ template <typename V>
 class Dict
 {
 public:
-    virtual void insert(std::string key, V value);/*Inserta el par key->value en el diccionario. 
-    Lanza una std::runtime_error si key ya existe en el diccionario.*/
-    virtual V search(std::string key);/*Busca el valor correspondiente a key. Devuelve el value asociado si key está en diccionario. 
-            Si no se encuentra, lanza una std::runtime_error.*/
-    virtual V remove(std::string key);/*Elimina el par key->value si se encuentra en el diccionario. 
-    Si no se encuentra, lanza una std::runtime_error*/
-    virtual int entries();//Devuelve el número de elementos que tiene el Diccionario.
+    virtual ~Dict() = default;
+    virtual void insert(const std::string& key, const V& value) = 0;
+    virtual V search(const std::string& key) const = 0;
+    virtual V remove(const std::string& key) = 0;
+    virtual int  entries() const = 0;
 };
 #endif
 
