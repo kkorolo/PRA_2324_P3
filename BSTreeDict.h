@@ -37,6 +37,10 @@ class BSTreeDict: public Dict<V> {
         V operator[](std::string key){
             return tree->search(TableEntry<V>(key)).value;
         }
+        friend std::ostream& operator<<(std::ostream &out, const BSTreeDict<V> &bs){
+            out<<*(bs.tree);
+            return out;
+        }
 
 
 
