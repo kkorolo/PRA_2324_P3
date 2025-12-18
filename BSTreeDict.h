@@ -20,21 +20,21 @@ class BSTreeDict: public Dict<V> {
         ~BSTreeDict(){
             delete tree;
         }
-        int entries()override{
+        int entries() const override {
             return tree->size();
         }
-        void insert(string key, V value) override{
+        void insert(const std::string& key, const V& value) override {
             tree->insert(TableEntry<V>(key,value));
         }
-        V search(string key) override{
+        V search(const std::string& key) const override {
             return tree->search(TableEntry<V>(key)).value;
         }
-        V remove(string key) override{
+        V remove(const std::string& key) override {
             V value=tree->search(TableEntry<V>(key)).value;
             tree->remove(TableEntry<V>(key));
             return value;
         }
-        V operator[](std::string key){
+        V operator[](const std::string& key){
             return tree->search(TableEntry<V>(key)).value;
         }
         friend std::ostream& operator<<(std::ostream &out, const BSTreeDict<V> &bs){
