@@ -97,7 +97,6 @@ class BSTree {
         void delete_cascade(BSNode<T>* n){
             if(n!=nullptr){
                 delete_cascade(n->left);
-                delete n;
                 delete_cascade(n->right);
                 delete n;
             }
@@ -137,6 +136,8 @@ class BSTree {
         // Destrucción
         ~BSTree(){
             delete_cascade(this->root);
+            root = nullptr;
+
         }
 
 
